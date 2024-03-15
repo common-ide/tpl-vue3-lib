@@ -1,0 +1,28 @@
+{
+  "name": "__repo__(noCase)/__name__(noCase)",
+  "version": "__version__(noCase)",
+  "description": "__description__(noCase)",
+  "main": "dist/szjy-workflow.umd.js",
+  "module": "dist/szjy-workflow.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "naive-ui": "^2.38.1",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "^3.7.3",
+    "vue-tsc": "^1.8.27"
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "workflow",
+    "repo": "@szjy",
+    "libName": "szjy-workflow",
+    "version": "0.1.0",
+    "description": "vue3 component library with vite",
+    "templater": "https://github.com/common-ide/tpl-vue3-lib.git"
+}
