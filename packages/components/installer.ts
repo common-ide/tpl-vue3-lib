@@ -14,6 +14,9 @@ const naive = create({
     components: [NButton]
 })
 
+export const commonInstall = (app: App) => {
+    app.use(naive)
+}
 
 
 const installer = function (app: App) {
@@ -21,7 +24,8 @@ const installer = function (app: App) {
     (installer as any).installed = true;
 
     // install naive ui
-    app.use(naive);
+    commonInstall(app);
+
     for (let key in components) {
         const comp = Reflect.get(components, key);
         app.component(comp.name, comp);

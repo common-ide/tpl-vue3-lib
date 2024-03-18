@@ -2,7 +2,15 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 // import SWorkflow from '../dist/index.mjs';
-import SWorkflow from '../index';
+import { SZHello, create } from '../index';
 
-console.log(444, SWorkflow);
-createApp(App).use(SWorkflow).mount('#app')
+const szkits = create({
+    components: [
+        SZHello
+    ]
+    // 这里可以传入一些配置项
+});
+
+
+console.log(444, szkits);
+createApp(App).use(szkits).mount('#app')
