@@ -1,7 +1,7 @@
 
 
 import { App } from "vue";
-import { components } from "./index";
+import * as components from "./components";
 
 import {
   // create naive ui
