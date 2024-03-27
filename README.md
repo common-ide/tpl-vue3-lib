@@ -10,6 +10,12 @@
 npm i __repo__(noCase)/__name__(noCase)
 ```
 
+
+本地开发：
+```shell
+npm run dev
+```
+
 然后在项目中按需引入：
 
 ```typescript

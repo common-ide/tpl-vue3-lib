@@ -12,7 +12,8 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "release": "npx commit-and-tag-version"
+    "release": "npx commit-and-tag-version",
+    "sync": "cnpm sync __repo__(noCase)/__name__(noCase)"
   },
   "dependencies": {
     "naive-ui": "^2.38.1",

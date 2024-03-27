@@ -1,0 +1,54 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  publish-to-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout release branch code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      # 设置 pnpm。指定版本7.0，不然会报错
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: ^8.0
+
+      # 设置 Node
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+
+      # 安装依赖
+      - name: Install dependencies
+        run: | 
+          pnpm install
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: install cnpm
+        run: npm install cnpm -g
+
+      # 打包
+      - name: Build Packages
+        run: pnpm run build
+
+      - name: Publish to NPM
+        run: npm publish --access public
+        env:
+          # 在第三步中设置的 NPM_TOKEN
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # 同步到 cnpm
+      - name: sync to cnpm
+        run: npm run sync
