@@ -9,7 +9,11 @@ export default defineConfig({
   plugins: [vue(), vueJsx({}), dts({
     exclude: ["node_modules", "examples"],
   })],
-
+  server: {
+    host: '0.0.0.0', //解决"vite use --host to expose"
+    port: __devPort__(noCase),
+    open: true
+  },
   build: {
     rollupOptions: {
       // 请确保外部化那些你的库中不需要的依赖
