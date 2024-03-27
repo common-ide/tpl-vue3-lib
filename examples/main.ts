@@ -2,11 +2,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 // import SWorkflow from '../dist/index.mjs';
-import { SZHello, create } from '../index';
+import { SzHello, create } from '../index';
 
 const szkits = create({
     components: [
-        SZHello
+        SzHello
     ]
     // 这里可以传入一些配置项
 });

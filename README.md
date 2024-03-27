@@ -19,12 +19,12 @@ npm run dev
 然后在项目中按需引入：
 
 ```typescript
-import { SZHello, create } from '__repo__(noCase)/__name__(noCase)';
+import { SzHello, create } from '__repo__(noCase)/__name__(noCase)';
 import '__repo__(noCase)/__name__(noCase)/dist/style.css';
 
 const szkits = create({
     components: [
-        SZHello
+        SzHello
     ]
     // 这里可以传入一些配置项
 });

@@ -1,5 +1,5 @@
-import SZHello from "./src/index.vue";
+import SzHello from "./src/index.vue";
 
 export {
-    SZHello
+    SzHello
 }
